@@ -8,13 +8,13 @@ Tên Database: [QuanLySieuThi_K235480106091] (Đã bao gồm Mã SV theo yêu c�
 
 2. Thiết kế bảng và Ràng buộc
 Hệ thống sử dụng quy tắc đặt tên BướuLạcĐà (PascalCase) và bọc tên bằng cặp ngoặc [ ]:  
-- Bảng [NhomHang]: Phân loại các nhóm sản phẩm (Ví dụ: Thực phẩm, Đồ gia dụng).    
+ Bảng [NhomHang]: Phân loại các nhóm sản phẩm (Ví dụ: Thực phẩm, Đồ gia dụng).    
   PK: [MaNhom] (Số nguyên tự tăng).  
-- Bảng [SanPham]: Lưu trữ thông tin chi tiết các mặt hàng.    
+ Bảng [SanPham]: Lưu trữ thông tin chi tiết các mặt hàng.    
   PK: [MaSanPham].    
   FK: [MaNhom] liên kết đến bảng [NhomHang].    
   CK: [GiaBan] >= 0 và [SoLuongTon] >= 0 để đảm bảo dữ liệu không bị âm.  
-- Bảng [KhachHang]: Quản lý thông tin và điểm tích lũy của khách.    
+ Bảng [KhachHang]: Quản lý thông tin và điểm tích lũy của khách.    
   CK: [DiemTichLuy] >= 0.  
 
 3. Mã SQL Khởi tạo
