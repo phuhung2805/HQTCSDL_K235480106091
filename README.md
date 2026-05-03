@@ -162,6 +162,7 @@ EXEC [dbo].[sp_TongDoanhThuSieuThi] @TongTien = @Result OUTPUT;
 SELECT @Result AS [TongDoanhThuHienTai];
 ```
 <img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/571f4ccb-ec8b-423c-86f6-ad50e608261c" />
+
 ### 3.2. Store Procedure sử dụng kỹ thuật Join nhiều bảng
 Yêu cầu: Xuất báo cáo chi tiết cho một khách hàng bất kỳ, bao gồm thông tin cá nhân và lịch sử mua hàng (Tên sản phẩm, số lượng, ngày mua).
 
