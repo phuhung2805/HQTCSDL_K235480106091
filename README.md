@@ -6,7 +6,7 @@
 - **Chuyên ngành:** Kỹ thuật Máy tính
 - **Trường:** Đại học Kỹ thuật Công nghiệp Thái Nguyên (TNUT)
 - **Môn học:** Hệ quản trị cơ sở dữ liệu - TEE560
-- 
+  
 ## Phần 1: Thiết kế và Khởi tạo Cấu trúc Dữ liệu (Kiến thức 6, 7)
 
 ### 1. Thông tin chung
