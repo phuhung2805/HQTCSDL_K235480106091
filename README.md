@@ -42,3 +42,4 @@ CREATE TABLE [KhachHang] (
 );
 GO
 ![alt text](https://github.com/user-attachments/assets/9ecb1dce-a131-4a52-8e7d-fe77736e7131)
+
