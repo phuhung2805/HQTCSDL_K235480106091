@@ -51,7 +51,7 @@ GO
 ```
 <img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/9ecb1dce-a131-4a52-8e7d-fe77736e7131" />
 
-Phần 2: Xây dựng Function (Kiến thức 8, 9)
+## Phần 2: Xây dựng Function (Kiến thức 8, 9)
 2.1. Scalar Function: Phân loại khách hàng
 Hàm này nhận vào mã khách hàng và trả về hạng khách hàng dựa trên điểm tích lũy.
 
@@ -129,7 +129,7 @@ GO
 SELECT * FROM [dbo].[fn_ThongKeGiaTriNhomHang]();
 ```
 <img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/26282481-1e10-44c9-99f8-4c40fd53165d" />
-Phần 3: Store Procedure - Thủ tục lưu trữ (Kiến thức 10, 11)
+## Phần 3: Store Procedure - Thủ tục lưu trữ (Kiến thức 10, 11)
 1. Lý thuyết về Store Procedure (SP)
 Khái niệm: Là một tập hợp các câu lệnh T-SQL được biên dịch sẵn và lưu trữ trong hệ quản trị CSDL.
 
@@ -183,7 +183,7 @@ EXEC [dbo].[sp_LichSuMuaHangKhachHang] 1;
 Chú thích: Các Store Procedure đã được thực thi thành công, xử lý tốt logic tham số OUTPUT và kết nối dữ liệu từ 4 bảng khác nhau để xuất báo cáo chi tiết.
 
 <img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/6efebc2a-9f3b-453a-b306-8e347e90d5c6" />
-Phần 4: Trigger và Xử lý logic nghiệp vụ
+## Phần 4: Trigger và Xử lý logic nghiệp vụ
 1. Lý thuyết về Trigger
 Khái niệm: Trigger là một loại thủ tục đặc biệt tự động thực thi khi có các sự kiện thay đổi dữ liệu (INSERT, UPDATE, DELETE) trên bảng.
 
@@ -222,7 +222,7 @@ SELECT [TenSanPham], [SoLuongTon] FROM [SanPham] WHERE [MaSanPham] = 'SP01';
 <img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/35ddf031-2bcb-4926-bb2e-6518cfde9b58" />
 Chú thích: Ảnh minh chứng số lượng tồn kho đã tự động giảm xuống tương ứng sau khi thực hiện lệnh Insert.
 
-Phần 5: Cursor và Duyệt dữ liệu
+## Phần 5: Cursor và Duyệt dữ liệu
 1. Lý thuyết về Cursor
 Khái niệm: Cursor (Con trỏ) cho phép duyệt và xử lý dữ liệu theo từng dòng (Row-by-row) thay vì xử lý theo tập hợp (Set-based) như các lệnh SQL thông thường.
 
