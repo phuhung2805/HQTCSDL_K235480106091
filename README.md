@@ -75,6 +75,7 @@ GO
 SELECT [HoTen], [DiemTichLuy], [dbo].[fn_PhanLoaiKhachHang]([MaKH]) AS [Hang] FROM [KhachHang];
 ```
 <img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/1a9d0073-fd18-4828-84cc-0544c77052f0" />
+
 ### 2.2. Inline Table-Valued Function: Danh sách sản phẩm theo nhóm
 Hàm này trả về một bảng chứa danh sách các sản phẩm thuộc một nhóm cụ thể.
 
@@ -93,6 +94,7 @@ GO
 SELECT * FROM [dbo].[fn_DanhSachSanPhamTheoNhom](2);
 ```
 <img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/97abe6be-d206-437c-bcb4-de3c330e44f4" />
+
 ### 2.3. Multi-statement Table-Valued Function: Thống kê giá trị theo nhóm hàng
 Mục đích: Sử dụng kỹ thuật xử lý đa câu lệnh (BEGIN...END) và biến bảng để thực hiện các tính toán phức tạp hơn so với hàm Inline thông thường.
 Logic nghiệp vụ: Hàm tính toán tổng số lượng tồn và tổng giá trị vốn của từng nhóm hàng. Đồng thời sử dụng CASE WHEN để tự động phân loại mức độ ưu tiên nhập hàng dựa trên tổng vốn tồn kho.
@@ -129,7 +131,9 @@ GO
 SELECT * FROM [dbo].[fn_ThongKeGiaTriNhomHang]();
 ```
 <img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/26282481-1e10-44c9-99f8-4c40fd53165d" />
+
 ## Phần 3: Store Procedure - Thủ tục lưu trữ (Kiến thức 10, 11)
+
 ### 1. Lý thuyết về Store Procedure (SP)
 Khái niệm: Là một tập hợp các câu lệnh T-SQL được biên dịch sẵn và lưu trữ trong hệ quản trị CSDL.
 
@@ -137,7 +141,9 @@ Khái niệm: Là một tập hợp các câu lệnh T-SQL được biên dịch
 
 So sánh: Khác với Function, Store Procedure không bắt buộc trả về giá trị, có thể chứa các lệnh thay đổi dữ liệu như INSERT, UPDATE, DELETE và hỗ trợ tham số đầu ra (OUTPUT).
 
+
 ### 2. Triển khai Store Procedure thực tế
+
 ### 3.1. Store Procedure sử dụng tham số OUTPUT
 Yêu cầu: Tính tổng doanh thu dựa trên tất cả các hóa đơn hiện có và trả kết quả về cho ứng dụng quản lý thông qua tham số đầu ra.
 
@@ -183,7 +189,9 @@ EXEC [dbo].[sp_LichSuMuaHangKhachHang] 1;
 Chú thích: Các Store Procedure đã được thực thi thành công, xử lý tốt logic tham số OUTPUT và kết nối dữ liệu từ 4 bảng khác nhau để xuất báo cáo chi tiết.
 
 <img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/6efebc2a-9f3b-453a-b306-8e347e90d5c6" />
+
 ## Phần 4: Trigger và Xử lý logic nghiệp vụ
+
 ### 1. Lý thuyết về Trigger
 Khái niệm: Trigger là một loại thủ tục đặc biệt tự động thực thi khi có các sự kiện thay đổi dữ liệu (INSERT, UPDATE, DELETE) trên bảng.
 
@@ -206,6 +214,7 @@ END;
 GO
 ```
 <img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/4938ebaf-6620-4fdc-8467-81fc09d469ec" />
+
 ### 3. Kiểm tra và Minh chứng
 Thực hiện lệnh INSERT để kiểm tra sự thay đổi của tồn kho:
 
@@ -222,11 +231,14 @@ SELECT [TenSanPham], [SoLuongTon] FROM [SanPham] WHERE [MaSanPham] = 'SP01';
 <img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/35ddf031-2bcb-4926-bb2e-6518cfde9b58" />
 Chú thích: Ảnh minh chứng số lượng tồn kho đã tự động giảm xuống tương ứng sau khi thực hiện lệnh Insert.
 
+
 ## Phần 5: Cursor và Duyệt dữ liệu
+
 ### 1. Lý thuyết về Cursor
 Khái niệm: Cursor (Con trỏ) cho phép duyệt và xử lý dữ liệu theo từng dòng (Row-by-row) thay vì xử lý theo tập hợp (Set-based) như các lệnh SQL thông thường.
 
 Mục đích: Sử dụng khi cần thực hiện các logic phức tạp, rẽ nhánh hoặc gọi các thủ tục khác trên từng bản ghi riêng biệt.
+
 
 ### 2. Triển khai Cursor thực tế
 Yêu cầu: Duyệt qua bảng [SanPham], kiểm tra tồn kho và in thông báo cảnh báo ra tab Messages.
@@ -254,6 +266,7 @@ CLOSE Cursor_KiemTraTonKho;
 DEALLOCATE Cursor_KiemTraTonKho;
 GO
 ```
-3. Kết quả thực thi
+
+### 3. Kết quả thực thi
 <img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/4de7b974-eeb8-4303-ab5b-66cde4a2aeb7" />
 Chú thích: Ảnh chụp tab Messages cho thấy Con trỏ đã chạy vòng lặp thành công, duyệt qua từng mặt hàng và in ra cảnh báo mức tồn kho tương ứng với logic rẽ nhánh IF...ELSE.
