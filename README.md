@@ -2,7 +2,7 @@
 
 - **Họ và tên:** Nguyễn Phú Hưng
 - **Mã sinh viên:** K235480106091
-- **Lớp:** K59
+- **Lớp:** K59KMT.K01
 - **Chuyên ngành:** Kỹ thuật Máy tính
 - **Trường:** Đại học Kỹ thuật Công nghiệp Thái Nguyên (TNUT)
 - **Môn học:** Hệ quản trị cơ sở dữ liệu - TEE560
